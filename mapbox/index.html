@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>custom Threejs typhoon</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0;}
+        .header {
+            width: 100%;
+            margin: 10px;
+            text-align: center;
+            font-size: 24px;
+            color: #ccc;
+        }
+        .map-cont {
+            position: relative;
+        }
+        #map {
+            height:600px;
+        }
+        #height {
+            display: none;
+        }
+        .controller {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 12px;
+            color: #eee;
+            align-items: center;
+            opacity: .5;
+        }
+        .ctl-row {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="header">Threejs typhoon</div>
+<div class="map-cont">
+    <canvas id="height"></canvas>
+    <div id='map'></div>
+    <div class="controller">
+        <div class="ctl-row">
+            <input type="checkbox" checked onclick="toggleRotate()" id="toggleRotate">
+            <label for="toggleRotate">Toggle Rotate</label>
+        </div>
+        <div class="ctl-row">
+            <input type="checkbox" checked onclick="toggleTerrain()" id="toggleTerrain">
+            <label for="toggleTerrain">Typhoon Layer</label>
+        </div>
+        <div>
+            <input type="range" value="90" id="opacity" onchange="changeOpacity(this)">
+        </div>
+    </div>
+</div>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<script src="https://api.mapbox.com/mapbox.js/v3.3.0/mapbox.js"></script>
+<script src='https://unpkg.com/three@0.102.0/build/three.min.js'></script>
+<script src="https://unpkg.com/three@0.102.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="./TrackballControls.js"></script>
+<script src="./textureloader.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>
